@@ -561,7 +561,7 @@
     <div class="cap">
       <div class="cap-icon">//</div>
       <div class="cap-title">Real-time policy evaluation</div>
-      <div class="cap-desc">Pre-execution evaluation on every trade intent. Machine-readable risk policies with JSON threshold checks. Fail-closed by design — if data is stale or unavailable, the intent is denied.</div>
+      <div class="cap-desc">Pre-execution evaluation on every trade intent. Machine-readable risk policies with deterministic threshold checks. Fail-closed by design — if data is stale or unavailable, the intent is denied.</div>
     </div>
     <div class="cap">
       <div class="cap-icon">≡</div>
@@ -602,21 +602,7 @@
         <span style="margin-left:4px;">decision · 2025-01-15T09:42:11Z</span>
       </div>
       <div class="terminal-body">
-        <div><span class="t-key">intent_id  </span><span class="t-val">int-9f3a2b</span></div>
-        <div><span class="t-key">book       </span><span class="t-val">equity-indices</span></div>
-        <div><span class="t-key">instrument </span><span class="t-val">ES1 (S&amp;P 500 Fut.)</span></div>
-        <div><span class="t-key">side       </span><span class="t-val">BUY</span></div>
-        <div><span class="t-key">notional   </span><span class="t-val">$<span class="t-num">2,400,000</span></span></div>
-        <br/>
-        <div><span class="t-key">policies_evaluated  </span><span class="t-num">7</span></div>
-        <div><span class="t-key">policies_passed     </span><span class="t-num">7</span></div>
-        <br/>
-        <div><span class="t-key">verdict    </span><span class="t-allow">ALLOW</span></div>
-        <br/>
-        <div class="t-dim"># notional within book limit (87% utilized)</div>
-        <div class="t-dim"># drawdown policy: within 3% threshold</div>
-        <div class="t-dim"># concentration: sector within limit</div>
-        <div class="t-dim"># model confidence: 0.82 &gt; min 0.65</div>
+        <div class="t-dim" style="line-height:1.7;">Every decision log captures the full intent, the policies evaluated, the thresholds checked, and the verdict — timestamped and ready for regulatory review or LP reporting.</div>
       </div>
     </div>
   </div>
@@ -657,7 +643,7 @@
       <div class="principle-mark">✓</div>
       <div class="principle-text">
         <strong>Fail-closed safety</strong>
-        If position data is unavailable or stale (&gt;60s), BridgeOS rejects the intent. No partial decisions.
+        If position data is unavailable or stale, BridgeOS rejects the intent. No partial decisions.
       </div>
     </div>
     <div class="principle">
